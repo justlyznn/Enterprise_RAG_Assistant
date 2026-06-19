@@ -8,5 +8,4 @@ model/*
 !model/.gitkeep
 .chainlit/
 *.log
-data/
 start_tunnel.sh
