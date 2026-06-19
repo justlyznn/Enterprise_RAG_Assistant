@@ -1,6 +1,8 @@
 # Intelligent Customer Assistant System
 
-Sistem asisten chatbot customer service end-to-end yang dibangun menggunakan **RAG (Retrieval-Augmented Generation)** dengan Langchain, Groq LLM, dan PgVector. Proyek ini memisahkan arsitektur menjadi 3 komponen utama: Data/Notebook, Backend (FastAPI), dan Frontend (Streamlit), yang diorkestrasi menggunakan Docker.
+![Tampilan Chatbot](image/tampilan_chatbot.png)
+
+Sistem asisten chatbot customer service end-to-end yang dibangun menggunakan **RAG (Retrieval-Augmented Generation)** dengan Langchain, Groq LLM, dan PgVector. Proyek ini memisahkan arsitektur menjadi 3 komponen utama: Data/Notebook, Backend (FastAPI), dan Frontend (Chainlit), yang diorkestrasi menggunakan Docker.
 
 ## Struktur Proyek
 - `data/`: Folder untuk dataset `.csv`
