@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+fastapi>=0.100.0
+uvicorn>=0.25.0
+chainlit>=1.1.400
+langchain>=0.1.13
+langchain-community>=0.0.29
+langchain-core>=0.1.40
+langchain-groq>=0.1.0
+langchain-huggingface>=0.0.1
+sentence-transformers>=2.5.1
+psycopg2-binary>=2.9.9
+pgvector==0.2.5
+sqlalchemy>=2.0.28
+python-dotenv==1.0.1
+pandas==2.2.1
+jupyter==1.0.0

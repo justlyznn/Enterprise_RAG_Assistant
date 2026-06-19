@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.ipynb_checkpoints/
+model/*
+!model/.gitkeep
+.chainlit/
+*.log
+data/
+start_tunnel.sh
