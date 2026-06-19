@@ -4,8 +4,6 @@ __pycache__/
 .env
 .DS_Store
 .ipynb_checkpoints/
-model/*
-!model/.gitkeep
 .chainlit/
 *.log
 start_tunnel.sh
