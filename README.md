@@ -20,7 +20,7 @@ Sistem asisten chatbot customer service end-to-end yang dibangun menggunakan **R
    ```
 
 2. **Kredensial API**
-   Salin `.env.example` ke `.env` dan tambahkan `GROQ_API_KEY` Anda.
+   buat file `.env` dan tambahkan `GROQ_API_KEY` Anda.
 
 3. **Data Ingestion**
    - Jalankan database melalui docker: `docker-compose up -d db`
