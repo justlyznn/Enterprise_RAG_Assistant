@@ -6,4 +6,3 @@ __pycache__/
 .ipynb_checkpoints/
 .chainlit/
 *.log
-start_tunnel.sh
