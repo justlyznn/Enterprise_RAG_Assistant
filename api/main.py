@@ -23,3 +23,7 @@ def chat_endpoint(request: ChatRequest):
         return ChatResponse(response=answer)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Mount Chainlit UI at the root path
+from chainlit.utils import mount_chainlit
+mount_chainlit(app=app, target="ui/app.py", path="/")

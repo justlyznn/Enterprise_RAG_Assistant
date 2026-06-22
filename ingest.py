@@ -4,8 +4,14 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores.pgvector import PGVector
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# Connect to the DB exposed to the host machine
-db_url = "postgresql://myuser:mypassword@127.0.0.1:5434/customer_db"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Connect to the DB from environment variables
+db_url = os.getenv("DATABASE_URL")
+if not db_url:
+    raise ValueError("DATABASE_URL tidak ditemukan di .env!")
 
 print("Loading dataset...")
 df = pd.read_csv('data/dataset_assignment.csv')
@@ -26,7 +32,7 @@ print("Loading embeddings model...")
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 collection_name = "customer_intelligence_kb_multi"
 
-print("Ingesting to PgVector...")
+print("Ingesting to PgVector (Supabase)...")
 vector_store = PGVector.from_documents(
     embedding=embeddings,
     documents=documents,
@@ -38,7 +44,7 @@ print("Ingestion complete. Verifying...")
 
 # Verify
 import psycopg2
-conn = psycopg2.connect("host=127.0.0.1 port=5434 user=myuser password=mypassword dbname=customer_db")
+conn = psycopg2.connect(db_url)
 cur = conn.cursor()
 cur.execute("SELECT count(*) FROM langchain_pg_embedding;")
 print("Total embeddings in DB:", cur.fetchone()[0])
